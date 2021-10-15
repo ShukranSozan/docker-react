@@ -2,8 +2,17 @@ FROM node:alpine
 
 WORKDIR '/app'
 
+<<<<<<< HEAD
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install
 
 CMD ["npm", "run","start"]
+=======
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+>>>>>>> 19a6e71bc21bad995d2e9e4d0372d75f7601f45a

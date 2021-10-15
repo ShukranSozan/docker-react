@@ -1,11 +1,36 @@
+<<<<<<< HEAD
 version: "3"
 services:
   web:
+=======
+version: '3'
+services:
+  web:
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+>>>>>>> 19a6e71bc21bad995d2e9e4d0372d75f7601f45a
     build:
       context: .
       dockerfile: Dockerfile.dev
     ports:
+<<<<<<< HEAD
       - "3000:3000"
     volumes:
       - /app/node_modules
       - .:/app
+=======
+      - '3000:3000'
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ['npm', 'run', 'test']
+>>>>>>> 19a6e71bc21bad995d2e9e4d0372d75f7601f45a
